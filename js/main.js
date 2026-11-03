@@ -2,6 +2,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { createModelingSystem } from "./modeling.js";
+import { createMeshEditor } from "./mesh-editor.js";
 
 const container = document.getElementById("scene");
 
@@ -97,6 +98,14 @@ buttons.forEach(button => {
 // Select the original cube
 modeling.addObject("Cube");
 cube.visible = false;
+// Mesh editing system
+const meshEditor = createMeshEditor({
+  THREE,
+  scene,
+  camera,
+  renderer,
+  getSelectedObject: modeling.getSelectedObject
+});
 
 // Window resizing
 function resize() {
