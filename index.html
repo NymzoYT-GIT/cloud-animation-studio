@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Animation Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">CLOUD <span>STUDIO</span></div>
+
+      <nav>
+        <button>File</button>
+        <button>Edit</button>
+        <button>Model</button>
+        <button>Animation</button>
+        <button>Render</button>
+      </nav>
+
+      <div class="account">
+        <span>Not logged in</span>
+        <button class="login-btn">Sign In</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <h3>Scene Collection</h3>
+        <div class="object">Camera</div>
+        <div class="object">Light</div>
+        <div class="object">Cube</div>
+
+        <h3>Tools</h3>
+        <button>Add Cube</button>
+        <button>Add Sphere</button>
+        <button>Add Cylinder</button>
+        <button>Import Model</button>
+      </aside>
+
+      <section class="viewport">
+        <div class="viewport-label">3D VIEWPORT</div>
+        <div id="scene">3D VIEWPORT LOADING...</div>
+      </section>
+
+      <aside class="properties">
+        <h3>Properties</h3>
+        <p>Object: Cube</p>
+        <label>Location X</label>
+        <input type="number" value="0">
+        <label>Location Y</label>
+        <input type="number" value="0">
+        <label>Location Z</label>
+        <input type="number" value="0">
+        <h3>Animation</h3>
+        <p>Frame: 1</p>
+      </aside>
+    </main>
+
+    <footer class="timeline">
+      <div class="timeline-header">
+        <strong>ANIMATION TIMELINE</strong>
+        <span>Current Frame: 1</span>
+      </div>
+      <div class="frames">
+        <span>1</span><span>10</span><span>20</span>
+        <span>30</span><span>40</span><span>50</span>
+        <span>60</span><span>70</span><span>80</span>
+        <span>90</span><span>100</span><span>110</span>
+        <span>120</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
