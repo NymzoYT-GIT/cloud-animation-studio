@@ -1,6 +1,7 @@
 
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { createModelingSystem } from "./modeling.js";
 
 const container = document.getElementById("scene");
 
@@ -77,6 +78,25 @@ ground.rotation.x = -Math.PI / 2;
 ground.position.y = -0.02;
 ground.receiveShadow = true;
 scene.add(ground);
+// Modeling system
+const modeling = createModelingSystem(THREE, scene);
+
+// Connect modeling buttons
+const buttons = document.querySelectorAll(".sidebar button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.textContent.trim();
+
+    if (["Add Cube", "Add Sphere", "Add Cylinder"].includes(name)) {
+      modeling.addObject(name.replace("Add ", ""));
+    }
+  });
+});
+
+// Select the original cube
+modeling.addObject("Cube");
+cube.visible = false;
 
 // Window resizing
 function resize() {
